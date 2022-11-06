@@ -16,18 +16,15 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//Function
+//Generate password function
 function generatePassword(){
 
 //Input password length
   let passwordLength = prompt("Please choose a password length between 8 and 128 characters.");
   console.log(passwordLength);
 
-  if(passwordLength = "false"){
-    alert("Input required.");
+  if(!passwordLength || passwordLength <8 || passwordLength >128){
+    alert("Please input a character between 8 and 128.");
 
-  } else if (passwordLength <8 || passwordLength >128){
-    passwordLength = prompt("Value must be between 8-128 characters.");
-    console.log(passwordLength);
-  } 
+  }
   }
