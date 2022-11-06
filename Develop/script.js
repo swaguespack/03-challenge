@@ -21,10 +21,11 @@ function generatePassword(){
 
 //Input password length
   let passwordLength = prompt("Please use a numeric value to choose a password length between 8 and 128 characters.");
-  console.log("Password Length: " + passwordLength);
+  console.log(`Password Length: ${passwordLength}`);
 
   if(!passwordLength || passwordLength <8 || passwordLength >128 || isNaN(passwordLength)){
     alert("Please input a numeric value between 8 and 128.");
+    console.log(`Password Length: ${passwordLength}`);
 
   }
   }
