@@ -8,7 +8,20 @@ var generateBtn = document.querySelector("#generate");
 //var userNumeric;
 //var userSpecialCharacter;
 
+//Test variables for for loop:
+//var letters = splSentences;
+//var combi = [];
+//var temp = "";
+//var letLen = Math.pow(1, letters.length);
 
+
+//Define possible input for password criteria
+var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var lowercase = uppercase.map(element => {
+  return element.toLowerCase();
+});
+var number = [0,1,2,3,4,5,6,7,8,9];
+var specialCharacter = ["!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[", "\\" ,"]","^","_","`","{","|","}","~"];
 
 // Write password to the #password input
 function writePassword() {
@@ -60,8 +73,14 @@ else {
   userInput = alert("Please choose a criteria.");
  }
 
-};
+ comboArray = [userLowercase, userUppercase, userNumeric, userSpecialCharacter];
 
+ //else if{ insert for loop to iterate through array for all possible combos
+
+  
+
+ 
+};
 
 
 
