@@ -31,11 +31,23 @@ function generatePassword(){
     alert("Please input a numeric value between 8 and 128.");
     console.log(`Password Length: ${passwordLength}`);
   }
-;
-  //Confirm lowercase
-  lowercase = prompt("Will the password contain a lowercase letter?");
-  console.log(`Contains Lowercase:` + lowercase);
 
-}
+  //Confirm lowercase
+  lowercase = confirm("Will the password contain a lowercase letter?");
+  console.log(`Contains Lowercase:${lowercase}`);
+
+  //Confirm uppercase
+  uppercase = confirm("Will the password contain an uppercase letter?");
+  console.log(`Contains Uppercase:${uppercase}`);
+
+  //Confirm numeric
+  numeric = confirm("Will the password contain a number?");
+  console.log(`Contains Number:${numeric}`);
+  
+  //Confirm special character
+  specialCharacter = confirm("Will the password contain a special character?");
+  console.log(`Contains Special Character:${specialCharacter}`);
+  
+};
   //lowercase, uppercase, numeric, and/or special characters
 
