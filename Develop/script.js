@@ -11,7 +11,6 @@ var userSpecialCharacter;
 //Array variables to place user input
 var userInput;
 var trueInput;
-var presentValues;
 
 //Define possible input for password criteria
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -83,12 +82,16 @@ console.log(trueInput);
  //For loop for random selection
  for (var i=0; i<userPasswordLength;i++){
   var result = trueInput[Math.floor(Math.random() * trueInput.length)];
-  passwordEmpty.push(result);
+  passwordEmpty.push(result); 
   console.log(result);
- };
+  if (userLowercase !== undefined && passwordEmpty.includes(userLowercase)=="false" 
+  || userUppercase !== undefined && passwordEmpty.includes(userUppercase)=="false"
+  || userNumeric !== undefined && passwordEmpty.includes(userNumeric)=="false"
+  || userSpecialCharacter !== undefined && passwordEmpty.includes(userSpecialCharacter)=="false");
+  {  continue;
+  }
 
-//All selection present
-presentValues = passwordEmpty;
+ };
 
  //Join password and return
  var password = passwordEmpty.join("");
