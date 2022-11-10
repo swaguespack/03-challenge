@@ -7,8 +7,11 @@ var userLowercase;
 var userUppercase;
 var userNumeric;
 var userSpecialCharacter;
+
+//Array variables to place user input
 var userInput;
 var trueInput;
+var presentValues;
 
 //Define possible input for password criteria
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -41,12 +44,11 @@ userPasswordLength = prompt("Please use a numeric value to choose a password len
     alert("Please input a numeric value between 8 and 128."); 
     generatePassword();
   } 
-
 else { 
   //Only log password length in console if value is true and numeric input between 8-128
   console.log(`Password Length: ${userPasswordLength}`);
 
-  //Confirm lowercase
+  //Confirm desired criteria
   if (confirm("Will the password contain a lowercase letter?") == true) {
     userLowercase = lowercase;
     console.log(`Contains lowercase: ${userLowercase}`);
@@ -62,31 +64,18 @@ else {
   }
 };
 
-//Result if no character criteria selected, alert and return user to first prompt
+//Result if no character criteria selected: alert and return user to first prompt
 if (!userLowercase && !userUppercase && !userNumeric && !userSpecialCharacter){
   alert("Please choose a criteria.");
   generatePassword();
- }
+ };
 
+//Result if one or more character criteria selected: concat input to array and remove undefined
 userInput = userLowercase.concat(userUppercase,userNumeric,userSpecialCharacter);
 trueInput = userInput.filter(function(element){
   return element !== undefined;
 });
 console.log(trueInput);
-  //Confirm uppercase
- //userUppercase = confirm("Will the password contain an uppercase letter?");
-  //console.log(`Contains Uppercase:${userUppercase}`);
-
-  //Confirm numeric
-  //userNumeric = confirm("Will the password contain a number?");
-  //console.log(`Contains Number:${userNumeric}`);
-  
-  //Confirm special character
-  //userSpecialCharacter = confirm("Will the password contain a special character?");
-  //console.log(`Contains Special Character:${userSpecialCharacter}`);
-  //};
-
-
 
 //Empty variable for password
  var passwordEmpty = [];
@@ -97,6 +86,9 @@ console.log(trueInput);
   passwordEmpty.push(result);
   console.log(result);
  };
+
+//All selection present
+presentValues = passwordEmpty;
 
  //Join password and return
  var password = passwordEmpty.join("");
