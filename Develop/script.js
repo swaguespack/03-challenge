@@ -12,6 +12,12 @@ var userSpecialCharacter;
 var userInput;
 var trueInput;
 
+//Array variables to test generator output
+var containsLower;
+var containsUpper;
+var containsNum;
+var containsSpecial;
+
 //Define possible input for password criteria
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var lowercase = uppercase.map(element => {
@@ -84,20 +90,42 @@ console.log(trueInput);
   var result = trueInput[Math.floor(Math.random() * trueInput.length)];
   passwordEmpty.push(result); 
   console.log(result);
-  if (userLowercase !== undefined && passwordEmpty.includes(userLowercase)=="false" 
-  || userUppercase !== undefined && passwordEmpty.includes(userUppercase)=="false"
-  || userNumeric !== undefined && passwordEmpty.includes(userNumeric)=="false"
-  || userSpecialCharacter !== undefined && passwordEmpty.includes(userSpecialCharacter)=="false");
-  {  continue;
-  }
+ };
 
+
+ //Check if generated password contains possible user input
+ //Contains lowercase?
+ containsLower = passwordEmpty.some(element =>{
+  return userLowercase.includes(element);
+});
+console.log(containsLower);
+//Contains uppercase?
+containsUpper = passwordEmpty.some(element =>{
+  return userUppercase.includes(element);
+});
+console.log(containsUpper);
+//Contains numeric?
+containsNum = passwordEmpty.some(element =>{
+  return userNumeric.includes(element);
+});
+console.log(containsNum);
+//Contains special character?
+containsSpecial = passwordEmpty.some(element =>{
+  return userSpecialCharacter.includes(element);
+});
+console.log(containsSpecial);
+
+//If user input is true and the generated output does not contain a character from the array, try again
+ if(!containsLower || !containsUpper || !containsNum || !containsSpecial);
+ {alert("Generator failed. Please try again.");
+ //generatePassword();
  };
 
  //Join password and return
  var password = passwordEmpty.join("");
  console.log("Your Password Is: " + password);
  return password;
- 
+
 };
 
 
