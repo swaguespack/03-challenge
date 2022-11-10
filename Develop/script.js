@@ -69,15 +69,13 @@ else {
   }
 
 //Result if no character criteria selected
- if (!userLowercase && !userUppercase && !userNumeric && !userSpecialCharacter){
+ while (!userLowercase && !userUppercase && !userNumeric && !userSpecialCharacter){
   alert("Please choose a criteria.");
  }
-else{
- userInput = [userLowercase, userUppercase, userNumeric, userSpecialCharacter];
 
-(userInput.indexOf(userLowercase)!==-1)
-  trueLower = [lowercase];
-}
+
+
+
 
 //Empty variable for password
  //var passwordEmpty = [];
