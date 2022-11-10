@@ -8,12 +8,6 @@ var userUppercase;
 var userNumeric;
 var userSpecialCharacter;
 var userInput;
-var trueInput;
-
-var trueLower;
-var trueUpper;
-var trueNumeric;
-var trueSpecial;
 
 //Define possible input for password criteria
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -52,26 +46,39 @@ else {
   console.log(`Password Length: ${userPasswordLength}`);
 
   //Confirm lowercase
-  userLowercase = confirm("Will the password contain a lowercase letter?");
-  console.log(`Contains Lowercase:${userLowercase}`);
+  if (confirm("Will the password contain a lowercase letter?") == true) {
+    userLowercase = [lowercase];
+    console.log(`Contains lowercase: ${userLowercase}`);
+  }  if (confirm("Will the password contain an uppercase letter?") == true) {
+    userUppercase = [uppercase];
+    console.log(`Contains Uppercase: ${userUppercase}`);
+  } if (confirm("Will the password contain a number?") == true) {
+    userNumeric = [number];
+    console.log(`Contains Number: ${userNumeric}`);
+  } if (confirm("Will the password contain a special character?") == true) {
+    userSpecialCharacter = [specialCharacter];
+    console.log(`Contains Special Character: ${userSpecialCharacter}`);
+  }
+};
 
   //Confirm uppercase
-  userUppercase = confirm("Will the password contain an uppercase letter?");
-  console.log(`Contains Uppercase:${userUppercase}`);
+ //userUppercase = confirm("Will the password contain an uppercase letter?");
+  //console.log(`Contains Uppercase:${userUppercase}`);
 
   //Confirm numeric
-  userNumeric = confirm("Will the password contain a number?");
-  console.log(`Contains Number:${userNumeric}`);
+  //userNumeric = confirm("Will the password contain a number?");
+  //console.log(`Contains Number:${userNumeric}`);
   
   //Confirm special character
-  userSpecialCharacter = confirm("Will the password contain a special character?");
-  console.log(`Contains Special Character:${userSpecialCharacter}`);
-  }
+  //userSpecialCharacter = confirm("Will the password contain a special character?");
+  //console.log(`Contains Special Character:${userSpecialCharacter}`);
+  //};
 
 //Result if no character criteria selected
- while (!userLowercase && !userUppercase && !userNumeric && !userSpecialCharacter){
+ if (!userLowercase && !userUppercase && !userNumeric && !userSpecialCharacter){
   alert("Please choose a criteria.");
  }
+
 
 
 
