@@ -1,19 +1,14 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Criteria variables for user input
-//var userPasswordLength;
-//var userLowercase;
-//var userUppercase;
-//var userNumeric;
-//var userSpecialCharacter;
-
-//Test variables for for loop:
-//var letters = splSentences;
-//var combi = [];
-//var temp = "";
-//var letLen = Math.pow(1, letters.length);
-
+//Criteria variables for user input
+var userPasswordLength;
+var userLowercase;
+var userUppercase;
+var userNumeric;
+var userSpecialCharacter;
+var userInput;
+var trueInput;
 
 //Define possible input for password criteria
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -69,16 +64,28 @@ else {
   }
 
 //Result if no character criteria selected
- if (!userLowercase && !userUppercase && userNumeric && userSpecialCharacter){
-  userInput = alert("Please choose a criteria.");
+ if (!userLowercase && !userUppercase && !userNumeric && !userSpecialCharacter){
+  alert("Please choose a criteria.");
+ }
+else{
+ userInput = [userLowercase, userUppercase, userNumeric, userSpecialCharacter];
+ trueInput = userInput.filter(e => e).join();
  }
 
- comboArray = [userLowercase, userUppercase, userNumeric, userSpecialCharacter];
+//Empty variable for password
+ var passwordEmpty = [];
 
- //else if{ insert for loop to iterate through array for all possible combos
+ //For loop for random selection
+ for (var i=0; i<userPasswordLength;i++){
+  var result = trueInput[Math.floor(Math.random() * trueInput.length)];
+  passwordEmpty.push(result);
+  console.log(result);
+ }
 
-  
-
+ //Join password and return
+ var password = passwordEmpty.join("");
+ console.log("Your Password Is: " + password);
+ return password;
  
 };
 
