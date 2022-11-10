@@ -8,6 +8,7 @@ var userUppercase;
 var userNumeric;
 var userSpecialCharacter;
 var userInput;
+var trueInput;
 
 //Define possible input for password criteria
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -47,20 +48,31 @@ else {
 
   //Confirm lowercase
   if (confirm("Will the password contain a lowercase letter?") == true) {
-    userLowercase = [lowercase];
+    userLowercase = lowercase;
     console.log(`Contains lowercase: ${userLowercase}`);
   }  if (confirm("Will the password contain an uppercase letter?") == true) {
-    userUppercase = [uppercase];
+    userUppercase = uppercase;
     console.log(`Contains Uppercase: ${userUppercase}`);
   } if (confirm("Will the password contain a number?") == true) {
-    userNumeric = [number];
+    userNumeric = number;
     console.log(`Contains Number: ${userNumeric}`);
   } if (confirm("Will the password contain a special character?") == true) {
-    userSpecialCharacter = [specialCharacter];
+    userSpecialCharacter = specialCharacter;
     console.log(`Contains Special Character: ${userSpecialCharacter}`);
   }
 };
 
+//Result if no character criteria selected, alert and return user to first prompt
+if (!userLowercase && !userUppercase && !userNumeric && !userSpecialCharacter){
+  alert("Please choose a criteria.");
+  generatePassword();
+ }
+
+userInput = userLowercase.concat(userUppercase,userNumeric,userSpecialCharacter);
+trueInput = userInput.filter(function(element){
+  return element !== undefined;
+});
+console.log(trueInput);
   //Confirm uppercase
  //userUppercase = confirm("Will the password contain an uppercase letter?");
   //console.log(`Contains Uppercase:${userUppercase}`);
@@ -74,30 +86,22 @@ else {
   //console.log(`Contains Special Character:${userSpecialCharacter}`);
   //};
 
-//Result if no character criteria selected
- if (!userLowercase && !userUppercase && !userNumeric && !userSpecialCharacter){
-  alert("Please choose a criteria.");
- }
-
-
-
-
 
 
 //Empty variable for password
- //var passwordEmpty = [];
+ var passwordEmpty = [];
 
  //For loop for random selection
- //for (var i=0; i<userPasswordLength;i++){
-  //var result = trueInput[Math.floor(Math.random() * trueInput.length)];
-  //passwordEmpty.push(result);
-  //console.log(result);
- //}
+ for (var i=0; i<userPasswordLength;i++){
+  var result = trueInput[Math.floor(Math.random() * trueInput.length)];
+  passwordEmpty.push(result);
+  console.log(result);
+ };
 
  //Join password and return
- //var password = passwordEmpty.join("");
- //console.log("Your Password Is: " + password);
-// return password;
+ var password = passwordEmpty.join("");
+ console.log("Your Password Is: " + password);
+ return password;
  
 };
 
