@@ -92,8 +92,7 @@ console.log(trueInput);
   console.log(result);
  };
 
-
- //Check if generated password contains possible user input
+ //Check if generated password contains at least one character from each of the selected criteria
  //Contains lowercase?
  containsLower = passwordEmpty.some(element =>{
   return userLowercase.includes(element);
@@ -115,18 +114,22 @@ containsSpecial = passwordEmpty.some(element =>{
 });
 console.log(containsSpecial);
 
-//If user input is true and the generated output does not contain a character from the array, try again
- if(!containsLower || !containsUpper || !containsNum || !containsSpecial);
- {alert("Generator failed. Please try again.");
- //generatePassword();
- };
+//If the password is missing a selection, alert and try again
+if (!containsLower || !containsUpper || !containsNum || !containsSpecial) {
+  alert("Generator failed. Please try again.");
+  generatePassword();
+};
 
  //Join password and return
- var password = passwordEmpty.join("");
- console.log("Your Password Is: " + password);
- return password;
-
+var password = passwordEmpty.join("");
+console.log("Your Password Is: " + password);
+return password;
+  
 };
+
+
+
+
 
 
 
