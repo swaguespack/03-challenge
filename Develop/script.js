@@ -10,6 +10,11 @@ var userSpecialCharacter;
 var userInput;
 var trueInput;
 
+var trueLower;
+var trueUpper;
+var trueNumeric;
+var trueSpecial;
+
 //Define possible input for password criteria
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var lowercase = uppercase.map(element => {
@@ -69,23 +74,25 @@ else {
  }
 else{
  userInput = [userLowercase, userUppercase, userNumeric, userSpecialCharacter];
- trueInput = userInput.filter(e => e).join();
- }
+
+(userInput.indexOf(userLowercase)!==-1)
+  trueLower = [lowercase];
+}
 
 //Empty variable for password
- var passwordEmpty = [];
+ //var passwordEmpty = [];
 
  //For loop for random selection
- for (var i=0; i<userPasswordLength;i++){
-  var result = trueInput[Math.floor(Math.random() * trueInput.length)];
-  passwordEmpty.push(result);
-  console.log(result);
- }
+ //for (var i=0; i<userPasswordLength;i++){
+  //var result = trueInput[Math.floor(Math.random() * trueInput.length)];
+  //passwordEmpty.push(result);
+  //console.log(result);
+ //}
 
  //Join password and return
- var password = passwordEmpty.join("");
- console.log("Your Password Is: " + password);
- return password;
+ //var password = passwordEmpty.join("");
+ //console.log("Your Password Is: " + password);
+// return password;
  
 };
 
