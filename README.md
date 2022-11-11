@@ -13,7 +13,7 @@ After all criteria is selected, the generator outputs a password.
 
 The following image shows the password generator's appearance and functionality:
 
-![The passord generator inclides a button that generates a password based on user criteria input and a text box display of the generated password](./assets/PasswordGenerator_mockUp.png)
+![The passord generator inclides a button that generates a password based on user criteria input and a text box display of the generated password](./Assets/PasswordGenerator_mockUp.png)
 
 
 ## Link
