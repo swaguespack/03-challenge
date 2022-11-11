@@ -18,4 +18,4 @@ The following image shows the password generator's appearance and functionality:
 
 ## Link
 
-https://swaguespack.github.io/02-challenge/
+https://swaguespack.github.io/03-challenge/
