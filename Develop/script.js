@@ -88,10 +88,9 @@ userPasswordLength = prompt("Please use a numeric value to choose a password len
   includeChar.push(userInput[Math.floor(Math.random()*userPasswordLength)]);
  };
 
- //Join password - shuffle the string - return the shuffled password
+ //Join password and return
 var password = includeChar.join("");
 password = password.toString();
-
 console.log("Your Password Is: " + password);
 return password;
 
